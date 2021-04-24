@@ -15,6 +15,7 @@ function App() {
       <BrowserRouter>
         <Navigation />
         <Switch>
+          <Redirect exact from="/" to="/home" />
           <Route path="/home" component={Home} />
           <Route path="/shop" component={Shop} />
           <Route path="/growinginfo" component={GrowingInfo} />

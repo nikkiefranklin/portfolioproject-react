@@ -53,6 +53,7 @@ function Home() {
                   <span className="sr-only">Next</span>
                 </a>
               </div>
+              
             </div>
           </div>
         </div>

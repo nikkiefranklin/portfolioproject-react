@@ -30,21 +30,11 @@ function Navigation() {
             </div>
             <div>
               <Form action="/home" id="loginC1" className="container-fluid">
-                
-                  <FormGroup className="d-flex my-2" id="login-container" >
+                 <FormGroup className="d-flex my-2" id="login-container" >
                     <input type="text" placeholder="Username" name="username" id="useN" className="flex-fill col-5 m-1" />
-
-
-
                     <input type="text" placeholder="Password" name="psw" id="password" className="flex-fill col-5 m-1" />
-
-
-
                     <button type="submit" id="myBtn" className="flex-fill col-2 m-1 small btn-sm">Login</button>
                   </FormGroup>
-
-                
-
               </Form>
             </div>
           </Navbar>

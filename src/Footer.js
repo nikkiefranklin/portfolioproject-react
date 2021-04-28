@@ -11,9 +11,9 @@ function Footer() {
             <div className="col-4 col-sm-2  text-nowrap">
               <h4>Links</h4>
               <ul className="list-unstyled">
-                <li><a className="text-danger text-uppercase" href="#">Home</a></li>
-                <li><a className="text-danger text-uppercase" href="shop.html">Shop</a></li>
-                <li><a className="text-danger text-uppercase" href="growinginfo.html">Growing Info</a></li>
+                <li><a className="text-danger text-uppercase" href="./home">Home</a></li>
+                <li><a className="text-danger text-uppercase" href="./shop">Shop</a></li>
+                <li><a className="text-danger text-uppercase" href="./growinginfo">Growing Info</a></li>
               </ul>
             </div>
             <div className="col-sm-10 text-right">

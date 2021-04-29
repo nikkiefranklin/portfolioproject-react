@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavItem, NavLink, NavbarBrand, Form, FormGroup } from 'reactstrap';
+import { Navbar, NavItem, NavLink, NavbarBrand, Form, FormGroup, Nav, Pills } from 'reactstrap';
 
 
 function Navigation() {
@@ -15,17 +15,17 @@ function Navigation() {
                 <span className="navbar-toggler-icon" />
               </button>
               <div className="collapse navbar-collapse" >
-                <nav className="navbar-nav me-auto mb-2 mb-lg-0 ml-5 nav-pills" >
+                <Nav variant="pills" activeKey="1" className="navbar-nav me-auto mb-2 mb-lg-0 ml-5" >
                   <NavItem>
-                    <NavLink href="./home" role="tab">Home</NavLink>
+                    <NavLink eventKey="1" href="./home" role="tab">Home</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="./shop" role="tab">Shop</NavLink>
+                    <NavLink eventKey="2" href="./shop" role="tab">Shop</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="./growinginfo" role="tab">Growing Information</NavLink>
+                    <NavLink eventKey="3" href="./growinginfo" role="tab">Growing Information</NavLink>
                   </NavItem>
-                </nav>
+                </Nav>
               </div>
             </div>
             <div>

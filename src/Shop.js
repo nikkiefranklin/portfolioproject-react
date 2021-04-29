@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, CardImg, CardTitle, CardText, CardDeck, CardSubtitle, CardBody } from 'reactstrap';
+import { Card, Button, CardImg, CardTitle, CardText, CardDeck, CardBody, CardFooter } from 'reactstrap';
 import Shop1 from "./images/shop01.jpg";
 import Shop2 from "./images/shop02.jpg";
 import Shop3 from "./images/shop03.jpg";
@@ -17,80 +17,80 @@ function Shop () {
       return (
         <React.Fragment>
       <div>
-        <h1 className="mt-4 mb-5" id="growT">Grow Big Shop</h1>
+        <h1 >Grow Big Shop</h1>
       </div>
       <div>
         <div className="container">
-          <div className="card-deck mb-5">
-            <div className="card">
-              <img src={Shop1} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Sweet Beet</h5>
-                <p className="card-text">Sweet Beet Beet has it all—sweet flavor, outstanding color, high yields and great
-                  disease resistance. 1 pack of seeds contains 150 seeds.</p><br />
-              </div>
-              <div className="card-footer">
+          <CardDeck className="card-deck mb-5">
+            <Card className="card">
+              <CardImg src={Shop1} className="card-img-top" alt="..." />
+              <CardBody className="card-body">
+                <CardTitle tag="h5" className="card-title">Sweet Beet</CardTitle>
+                <CardText className="card-text">Sweet Beet Beet has it all—sweet flavor, outstanding color, high yields and great
+                  disease resistance. 1 pack of seeds contains 150 seeds.</CardText><br />
+              </CardBody>
+              <CardFooter className="card-footer">
                 <form className="small-text">
                   <a>$2.99</a><br />
                   <label htmlFor="quantity">Quantity</label><br />
                   <input type="number" id="quantity" name="quantity" min={1} max={25} />
                 </form><br />
-                <a href="#" className="btn btn-dark">Add to cart</a>
-              </div>
-            </div>
-            <div className="card">
-              <img src={Shop2} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Sweet Onion</h5>
-                <p className="card-text">This sweet, firm onion has straw-colored skin and yellowish flesh that matures into
-                  a very uniform shape and size. 1 pack of seeds contains 150 seeds.</p>
-              </div>
-              <div className="card-footer">
+                <Button href="#" className="btn btn-dark">Add to cart</Button>
+              </CardFooter>
+            </Card>
+            <Card className="card">
+              <CardImg src={Shop2} className="card-img-top" alt="..." />
+              <CardBody className="card-body">
+                <CardTitle tag="h5" className="card-title">Sweet Onion</CardTitle>
+                <CardText className="card-text">This sweet, firm onion has straw-colored skin and yellowish flesh that matures into
+                  a very uniform shape and size. 1 pack of seeds contains 150 seeds.</CardText>
+              </CardBody>
+              <CardFooter className="card-footer">
                 <form>
                   <a>$2.99</a><br />
                   <label htmlFor="quantity">Quantity</label><br />
                   <input type="number" id="quantity" name="quantity" min={1} max={25} />
                 </form><br />
-                <a href="#" className="btn btn-dark">Add to cart</a>
-              </div>
-            </div>
-            <div className="card">
-              <img src={Shop3} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Nicola Potato</h5>
-                <p className="card-text">A beautiful golden yellow inside and out, Nicola has a mild nutty flavor and is
-                  great for baking, boiling or roasting. 1 pack of seeds contains 150 seeds.</p>
-              </div>
-              <div className="card-footer">
+                <Button href="#" className="btn btn-dark">Add to cart</Button>
+              </CardFooter>
+            </Card>
+            <Card className="card">
+              <CardImg src={Shop3} className="card-img-top" alt="..." />
+              <CardBody className="card-body">
+                <CardTitle tag="h5" className="card-title">Nicola Potato</CardTitle>
+                <CardText className="card-text">A beautiful golden yellow inside and out, Nicola has a mild nutty flavor and is
+                  great for baking, boiling or roasting. 1 pack of seeds contains 150 seeds.</CardText>
+              </CardBody>
+              <CardFooter className="card-footer">
                 <form>
                   <a>$6.99</a><br />
                   <label htmlFor="quantity">Quantity</label><br />
                   <input type="number" id="quantity" name="quantity" min={1} max={25} />
                 </form><br />
-                <a href="#" className="btn btn-dark">Add to cart</a>
-              </div>
-            </div>
-            <div className="card">
-              <img src={Shop4} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Blueberry Hedge</h5>
-                <p className="card-text">Berries are medium to large and very sweet when ripened on the bush. Yield on a
+                <Button href="#" className="btn btn-dark">Add to cart</Button>
+              </CardFooter>
+            </Card>
+            <Card className="card">
+              <CardImg src={Shop4} className="card-img-top" alt="..." />
+              <CardBody className="card-body">
+                <CardTitle tag="h5" className="card-title">Blueberry Hedge</CardTitle>
+                <CardText className="card-text">Berries are medium to large and very sweet when ripened on the bush. Yield on a
                   mature bush is above average at 8 to 10 pounds per bush. Productivity is high due to an extended, 5
-                  weeklong harvest season. 1 6" starter plant.</p>
-              </div>
-              <div className="card-footer">
+                  weeklong harvest season. 1 6" starter plant.</CardText>
+              </CardBody>
+              <CardFooter className="card-footer">
                 <form>
                   <a>$25.99</a><br />
                   <label htmlFor="quantity">Quantity</label><br />
                   <input type="number" id="quantity" name="quantity" min={1} max={25} />
                 </form><br />
-                <a href="#" className="btn btn-dark">Add to cart</a>
-              </div>
-            </div>
-          </div>
+                <Button href="#" className="btn btn-dark">Add to cart</Button>
+              </CardFooter>
+            </Card>
+          </CardDeck>
         </div>
         <div className="container">
-          <div className="card-deck mb-5">
+          <CardDeck className="card-deck mb-5">
             <div className="card">
               <img src={Shop5} className="card-img-top" alt="..." />
               <div className="card-body">
@@ -157,10 +157,10 @@ function Shop () {
                 <a href="#" className="btn btn-dark">Add to cart</a>
               </div>
             </div>
-          </div>
+          </CardDeck>
         </div>
         <div className="container">
-          <div className="card-deck mb-5">
+          <CardDeck className="card-deck mb-5">
             <div className="card">
               <img src={Shop9} className="card-img-top" alt="..." />
               <div className="card-body">
@@ -229,7 +229,7 @@ function Shop () {
                 <a href="#" className="btn btn-dark">Add to cart</a>
               </div>
             </div>
-          </div>
+          </CardDeck>
         </div>
       </div>
       </React.Fragment>

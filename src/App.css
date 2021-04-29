@@ -46,6 +46,7 @@
   border-width: 10px;
   border-color: rosybrown;
   border-radius: 5px;
+  margin-top: 80px;
 
 }
 #navBar{
@@ -55,60 +56,36 @@
   border-width: 10px;
   border-color: rosybrown;
   border-radius: 5px;
+  margin-bottom: 50px;
 }
 
-.row-content {
-  padding: 50px 0;
+/* .row-content {
+  padding: 50px;
   border-bottom: 1px ridge;
   min-height: 200px; 
-}
+} */
 
 h1 {
   font-family: cursive;
   font-size: 80px;
-  margin-top: 50px;
-  font-variant: small-caps;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
 }
 
-#card1 {
-  border-style: inset;
-  border-color: slategray;
-  border-width: 6px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-#card2 {
-  border-style: inset;
-  border-color: slategray;
-  border-width: 6px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-#card3 {
-  border-style: inset;
-  border-color: slategray;
-  border-width: 6px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.card-img-top {
-  height: 50vw;
-  
-}
-    
-@media (min-width: 576px) {
-.card-deck {
-  display: block;
-  margin-right: 15;
-  margin-left: -15;
-}
-}
     
 @media (min-width: 768px) {
 .card-img-top {
   height: 15vw;
 }
 }
+
+@media (min-width: 768px) {
+  .card-img-top {
+      height: 15vw;
+  }
+  }
+     
     
 .card-deck {
   display: flex;
@@ -117,12 +94,27 @@ h1 {
 }
 * {box-sizing: border-box}
 
-.cardT {
+.card-title {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-variant-caps: all-small-caps;
-  font-size: 23px;
+  font-size: 27px;
   font-weight: bolder;
 }
+
+.card-footer{
+  background-color: silver;
+  text-align: start;
+  font-variant-caps: all-petite-caps;
+  font-weight: bold;
+  
+}
+.card {
+  border-style: groove;
+  border-color: slategray;
+  border-width: 6px;
+  text-align: start;
+}
+
 
 #regForm {
   border-style: solid;
@@ -132,14 +124,15 @@ h1 {
   font-variant-caps: all-small-caps;
   font-weight: 500;
   padding: 10px;
+  text-align: start;
 }
-
 
 #loginC1 {
   width: 450px;
   border-style: outset;
   border-width: 4px;
-  border-color: #bc8f8f;
+  border-color: rosybrown;
+  background-color: #d1dfcfc5;
   font-variant-caps: all-small-caps;
 }
 
@@ -151,9 +144,10 @@ h1 {
   width: 165px;
 }
 
-.nav-item:active {
+.nav-link:active {
   background-color: rosybrown;
   border-radius: 5px;
+
 }
 
 .carousel-item {
@@ -164,42 +158,46 @@ h1 {
   
 }
 
+.caption {
+height: 9px;
+text-align: center;
+padding-bottom: 40px;
+margin-bottom: 20px;
+font-variant-caps: all-small-caps;
+}
+
 .prev-icon {
-  margin: 140px 0px 0px -44px;
+  margin: 140px 0px 0px -85px;
   border: 6px #76b852 ridge;
   border-Width: 20px ridge; 
-  width: 60px;
-  height: 35%;
+  width: 100px;
+  height: 50%;
+  
 }
 
 .next-icon {
-  margin: 140px -44px 0px 0px;
+  margin: 140px -85px 0px 0px;
   border: 6px #76b852 ridge;
-  width: 60px;
-  height: 35%;
+  width: 100px;
+  height: 50%;
 }
 
-.card-footer{
-  background-color: silver;
-  
-}
-.card {
-  border-style: groove;
-  border-color: slategray;
-  border-width: 6px;
-}
 
 .active {
   background-color: rosybrown;
   border-radius: 5px;
 }
 
+#accordion{
+  text-align: start;
+}
 
 #git {
   background-color: rgba(236, 193, 156, 0.486);
   border-color: #76b852;
   border-style: inset;
   border-width: 3px;
+  
 }
 #sweetB {
   background-color: rgba(236, 193, 156, 0.486);

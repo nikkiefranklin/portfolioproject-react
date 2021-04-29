@@ -59,7 +59,7 @@ const Home = (props) => {
         key={item.src}
       >
         <img src={item.src} alt={item.altText} className='d-block w-100' />
-        <CarouselCaption className="bg-dark d-block" captionHeader={item.caption} />
+        <CarouselCaption className="caption bg-dark d-block" captionHeader={item.caption} />
       </CarouselItem>
     );
   });
@@ -67,7 +67,7 @@ const Home = (props) => {
   return (
     <React.Fragment>
       <div>
-        <h1>Welcome to my Home Page</h1>
+        <h1 >Home of Grow Big</h1>
       </div>
       <div className="container">
         <div className="row row-content" id="homeCarousel">
@@ -116,7 +116,7 @@ const Home = (props) => {
       <div>
         <div className="container mt-5 mb-5" id="regForm">
           <Form className="inset">
-            <h2>Register Here</h2><br />
+            <h2 className="text-center">Register Here</h2><br />
             <div className="form-row">
               <FormGroup className="form-group col-md-6">
                 <Label for="fName">First Name</Label>

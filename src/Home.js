@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Component} from 'react'
 import Slide1 from './images/harvesting-basket-2x.jpg';
 import Slide2 from './images/specC.jpg';
 import Slide3 from './images/rootsH.jpg';
@@ -7,6 +8,7 @@ import Card1 from './images/card1.png';
 import Card2 from './images/card2b.jpg';
 import Card3 from './images/card3b.jpg';
 import { Card, CardImg, CardTitle, CardText, CardDeck, CardBody, NavLink, Form, FormGroup, Label, Input, FormText, Button, FormFeedback } from 'reactstrap';
+import { render } from '@testing-library/react';
 //import PlacesAutocomplete from 'react-places-autocomplete';
 //import { geocodeByAddress, geocodeByPlaceId, getLatLng, yarn } from 'react-places-autocomplete';
 
@@ -28,7 +30,7 @@ const items = [
   }
 ];
 
-const Home = (props) => {
+const Carousel1 = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -113,66 +115,128 @@ const Home = (props) => {
           </Card>
         </CardDeck>
       </div>
-      <div>
-        <div className="container mt-5 mb-5" id="regForm">
-          <Form className="inset">
-            <h2 className="text-center">Register Here</h2><br />
-            <div className="form-row">
-              <FormGroup className="form-group col-md-6">
-                <Label for="fName">First Name</Label>
-                <Input type="text" id="fName" placeholder="First Name" />
-              </FormGroup>
-              <FormGroup className="form-group col-md-6">
-                <Label for="lName">Last Name</Label>
-                <Input type="text" id="lName" placeholder="Last Name" />
-              </FormGroup>
-            </div>
-            <div className="form-row">
-              <FormGroup className="form-group col-md-6">
-                <Label for="inputEmail4">Email</Label>
-                <Input type="email" id="inputEmail4" placeholder="Email" />
-              </FormGroup>
-              <FormGroup className="form-group col-md-6">
-                <Label for="inputPassword4">Password</Label>
-                <Input type="password" id="inputPassword4" placeholder="Password" />
-              </FormGroup>
-            </div>
-            <FormGroup className="form-group">
-              <Label for="inputAddress">Address</Label>
-              <Input type="text" id="inputAddress" placeholder="1234 Main St" />
-            </FormGroup>
-            <FormGroup className="form-group">
-              <Label for="inputAddress2">Address 2</Label>
-              <Input type="text" id="inputAddress2" placeholder="Apartment, studio, or floor" />
-            </FormGroup>
-            <div className="form-row">
-              <FormGroup className="form-group col-md-6">
-                <Label for="inputCity">City</Label>
-                <Input type="text" id="inputCity" placeholder="City" />
-              </FormGroup>
-              <FormGroup className="form-group col-md-4">
-                <Label for="inputState">State</Label>
-                <Input id="inputState" name="state" placeholder="State" />
-              </FormGroup>
-              <FormGroup className="form-group col-md-2">
-                <Label for="inputZip">Zip</Label>
-                <Input type="text" className="form-control" id="inputZip" />
-              </FormGroup>
-            </div>
-            <FormGroup check>
-              <Input type="checkbox" id="gridCheck" />
-              <Label for="gridCheck">
-                Register Me 
-              </Label>
-            </FormGroup>
-            <Button size="lg" type="submit" className="btn btn-success">Sign In</Button>
-          </Form>
-        </div>
-      </div>
-
     </React.Fragment >
   );
 }
 
+class Home extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      fName: '',
+      lName: '',
+      inputEmail: '',
+      inputPassword: '',
+      inputAddress: '',
+      inputAddress2: '',
+      inputCity: '',
+      inputState: '',
+      inputZip: '',
+      gridCheck: false,
+      touched: {
+        fName: false,
+        lName: false,
+        inputEmail: false,
+        inputPassword: false
+      }
+    };
+
+    this.handleChange = this.handleInputChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const name = target.name;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit(event) {
+    console.log('Current state is: ' + JSON.stringify(this.state));
+    alert('Current state is: ' + JSON.stringify(this.state));
+    event.preventDefault();
+  }
+
+
+render() {
+return (
+  <React.Fragment>
+    <Carousel1></Carousel1>
+    <div>
+      <div className="container mt-5 mb-5" id="regForm">
+        <Form onSubmit={this.handleSubmit} className="inset">
+          <h2 className="text-center">Register Here</h2><br />
+          <div className="form-row">
+            <FormGroup className="form-group col-md-6">
+              <Label htmlFor="fName">First Name</Label>
+              <Input type="text" className="form-control" id="fName" name="fName" placeholder="First Name" value={this.state.fName}
+                onChange={this.handleInputChange} />
+            </FormGroup>
+            <FormGroup className="form-group col-md-6">
+              <Label htmlFor="lName">Last Name</Label>
+              <Input type="text" className="form-control" id="lName" name="lName" placeholder="Last Name" value={this.state.lName}
+                onChange={this.handleInputChange} />
+            </FormGroup>
+          </div>
+          <div className="form-row">
+            <FormGroup className="form-group col-md-6">
+              <Label htmlFor="inputEmail">Email</Label>
+              <Input type="email" className="form-control" id="inputEmail" name="inputEmail" placeholder="Email" value={this.state.inputEmail}
+                onChange={this.handleInputChange} />
+            </FormGroup>
+            <FormGroup className="form-group col-md-6">
+              <Label htmlFor="inputPassword">Password</Label>
+              <Input type="password" className="form-control" id="inputPassword" name="inputPassword" placeholder="Password" value={this.state.inputPassword}
+                onChange={this.handleInputChange} />
+            </FormGroup>
+          </div>
+          <FormGroup className="form-group">
+            <Label htmlFor="inputAddress">Address</Label>
+            <Input type="text" className="form-control" id="inputAddress" name="inputAddress" placeholder="1234 Main St" value={this.state.inputAddress}
+              onChange={this.handleInputChange} />
+          </FormGroup>
+          <FormGroup className="form-group">
+            <Label htmlFor="inputAddress2">Address 2</Label>
+            <Input type="text" className="form-control" id="inputAddress2" name="inputAddress2" placeholder="Apartment, studio, or floor" value={this.state.inputAddress2}
+              onChange={this.handleInputChange} />
+          </FormGroup>
+          <div className="form-row">
+            <FormGroup className="form-group col-md-6">
+              <Label htmlFor="inputCity">City</Label>
+              <Input type="text" className="form-control" id="inputCity" name="inputCity" placeholder="City" value={this.state.inputCity}
+                onChange={this.handleInputChange} />
+            </FormGroup>
+            <FormGroup className="form-group col-md-4">
+              <Label htmlFor="inputState">State</Label>
+              <Input type="text" className="form-control" id="inputState" name="inputState" placeholder="State" value={this.state.inputState}
+                onChange={this.handleInputChange} />
+            </FormGroup>
+            <FormGroup className="form-group col-md-2">
+              <Label htmlFor="inputZip">Zip</Label>
+              <Input type="text" className="form-control" name="inputZip" id="inputZip" value={this.state.inputZip}
+                onChange={this.handleInputChange} />
+            </FormGroup>
+          </div>
+          <FormGroup check>
+            <Input type="checkbox" id="gridCheck" checked={this.state.gridCheck}
+              onChange={this.handleInputChange} /> {' '}
+            <Label htmlFor="gridCheck">
+              Register Me
+              </Label>
+          </FormGroup>
+          <Button size="lg" type="submit" className="btn btn-success">Sign In</Button>
+        </Form>
+      </div>
+    </div>
+  </React.Fragment>
+);}
+}
 
 export default Home;

@@ -80,12 +80,13 @@ h1 {
 }
 }
 
-@media (min-width: 768px) {
-  .card-img-top {
-      height: 15vw;
+@media (min-width: 576px) {
+  .card-deck {
+      display: block;
+      margin-right: 15;
+      margin-left: -15;
   }
   }
-     
     
 .card-deck {
   display: flex;
@@ -272,3 +273,30 @@ font-variant-caps: all-small-caps;
   border-style: inset;
   border-width: 3px;
 }
+/* .row-content {
+  padding: 50px 0;
+  border-bottom: 1px ridge;
+  min-height: 200px; 
+}
+   */
+
+   #card1 {
+    border-style: inset;
+    border-color: slategray;
+    border-width: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #card2 {
+    border-style: inset;
+    border-color: slategray;
+    border-width: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #card3 {
+    border-style: inset;
+    border-color: slategray;
+    border-width: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+  }

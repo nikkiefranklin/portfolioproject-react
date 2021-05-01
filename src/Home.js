@@ -143,7 +143,7 @@ class Home extends Component {
       }
     };
 
-    this.handleChange = this.handleInputChange.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
 
   }
@@ -159,8 +159,8 @@ class Home extends Component {
   }
 
   handleSubmit(event) {
-    console.log('Current state is: ' + JSON.stringify(this.state));
-    alert('Current state is: ' + JSON.stringify(this.state));
+    // console.log('Current state is: ' + JSON.stringify(this.state));
+    alert('Thanks for Registering: ' + JSON.stringify(this.state));
     event.preventDefault();
   }
 
@@ -168,7 +168,7 @@ class Home extends Component {
 render() {
 return (
   <React.Fragment>
-    <Carousel1></Carousel1>
+    <Carousel1 />
     <div>
       <div className="container mt-5 mb-5" id="regForm">
         <Form onSubmit={this.handleSubmit} className="inset">
